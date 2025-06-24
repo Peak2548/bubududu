@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Auan</title>
+  <style>
+    body { text-align: center; margin-top: 50px; background-color: #111; color: #fff; font-family: sans-serif; }
+    select, button { padding: 10px 20px; font-size: 18px; border-radius: 8px; border: none; margin: 5px; }
+    button { background-color: #ff4081; color: white; margin-top: 20px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>เลือกอ้วน</h1>
+  <select id="gifSelect">
+    <option value="hug.gif">กอดอ้วน</option>
+    <option value="pianist.gif">Pianist</option>
+    <option value="sleep.jpg">นอนอ้วน</option>
+    <option value="game_dudu.gif">อ้วนเกมส์</option>
+    <option value="kiss.gif">จุ๊บอ้วน</option>
+    <option value="oDek.gif">โอ๋เด็ก</option>
+    <option value="peekaboo.gif">แอบดูอ้วน</option>
+    <option value="TeeAuan.gif">เล่นอ้วน</option>
+  </select>
+  <br />
+  <button id="sendBtn">อ้วน!</button>
+  <button id="testBtn" style="background-color: #2196F3;">ทดสอบ</button>
+
+  <script>
+    const sendBtn = document.getElementById("sendBtn");
+    const testBtn = document.getElementById("testBtn");
+    const gifSelect = document.getElementById("gifSelect");
+
+    sendBtn.addEventListener("click", () => {
+      const ip = localStorage.getItem("targetIP");
+      const gif = gifSelect.value;
+      if (!ip) return alert("IP ผิดอ้วน");
+      window.electronAPI.sendToIP({ ip, gif });
+    });
+
+    testBtn.addEventListener("click", () => {
+      const gif = gifSelect.value;
+      // เรียก popup ของตัวเองโดยไม่ต้องส่งผ่าน network
+      window.electronAPI.showGifLocal(gif);
+    });
+  </script>
+</body>
+</html>

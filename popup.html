@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Auan</title>
+  <style>
+    body {
+      margin: 0;
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <img id="gifImg" src="" />
+  <script>
+    window.electronAPI.onShowGif((gifName) => {
+      document.getElementById("gifImg").src = `assets/${gifName}`;
+    });
+  </script>
+</bo

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Auan</title>
+  <style>
+    body { text-align: center; margin-top: 50px; background-color: #111; color: #fff; font-family: sans-serif; }
+    input, button { padding: 10px 20px; font-size: 18px; border-radius: 8px; border: none; }
+    input { width: 250px; }
+    button { background-color: #4CAF50; color: white; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>IP อ้วน</h1>
+  <input id="ipInput" type="text" placeholder="192.168.x.x" />
+  <br />
+  <button id="nextBtn">อ้วน!</button>
+
+  <script>
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      const ip = document.getElementById("ipInput").value.trim();
+      if (!ip) return alert("ใส่ IP ก่อน!");
+      localStorage.setItem("targetIP", ip);
+      window.location.href = "choose.html";
+    });
+  </script>
+</body>
+</html>
