@@ -9,14 +9,14 @@
   "build": {
     "appId": "com.example.gifAuan",
     "productName": "Auan",
-    "icon": "BBDD.png",
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "icon": "icon.png"
     }
   },
   "devDependencies": {
     "electron": "^29.0.0",
-    "electron-builder": "^26.0.0"
+    "electron-builder": "^26.0.12"
   },
   "dependencies": {
     "ws": "^8.18.2"
