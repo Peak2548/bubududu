@@ -1,6 +1,6 @@
 {
   "name": "Auan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -11,14 +11,14 @@
     "productName": "Auan",
     "win": {
       "target": "nsis",
-      "icon": "icon.png"
+      "icon": "icon.ico"
     }
   },
   "devDependencies": {
-    "electron": "^29.0.0",
+    "electron": "^37.1.0",
     "electron-builder": "^26.0.12"
   },
   "dependencies": {
-    "ws": "^8.18.2"
+    "ws": "^8.18.3"
   }
 }
